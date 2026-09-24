@@ -102,3 +102,35 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.removeChild(textArea);
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const linksList = document.querySelector('.links-list');
+  if (!linksList) return;
+
+  const linkCard = document.createElement('a');
+  linkCard.href = 'https://share.gemini.google/P7BkNszG2FjN';
+  linkCard.target = '_blank';
+  linkCard.rel = 'noopener noreferrer';
+  linkCard.className = 'link-card';
+  linkCard.innerHTML = `
+    <div class="link-card-left">
+      <div class="link-icon-badge badge-philosophy">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+      </div>
+      <div class="link-info">
+        <div class="link-category">Refleksi & Makna Hidup</div>
+        <h3 class="link-title">Kehidupan Sempurna Sang Arsiparis Semesta</h3>
+        <div class="link-meta">
+          <span class="meta-tag">share.gemini.google</span>
+        </div>
+      </div>
+    </div>
+    <div class="link-action">
+      <svg class="arrow-link" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+    </div>
+  `;
+  linksList.appendChild(linkCard);
+
+  const sectionCount = document.querySelector('.section-count');
+  if (sectionCount) sectionCount.textContent = '6 tautan';
+});
